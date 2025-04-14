@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MGKO - بوابة الرموز</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      color: #00ffcc;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 100px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .logo {
+      font-size: 32px;
+      color: #a0f;
+      text-shadow: 0 0 15px #c0f;
+      letter-spacing: 8px;
+    }
+
+    .subtext {
+      font-size: 20px;
+      margin-top: 8px;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+      direction: rtl;
+      unicode-bidi: isolate;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="logo-container">
+  <div class="logo">𓂀MGK𒆜</div>
+  <div class="subtext">𒈠𓏏𒀸𒁺𒉌𓇌𓂀𒐕𓁹𓎛𒂍𓄿𒈠</div>
+</div>
+
+<canvas id="matrixCanvas"></canvas>
+
+<script>
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const matrixChars = "アァイィウヴエカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂツヅテデトドナニヌネノハバパヒビピフブプヘベペホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789𓂀𒈠𒐕⧫⟁⊛";
+  const fontSize = 14;
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      ctx.shadowColor = "#ff0044";
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = "#00ff33";
+      ctx.fillText(char, x, y);
+
+      ctx.shadowBlur = 0;
+
+      if (y > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 40);
+</script>
+
+</body>
+</html<div class="logo-container">
+  <div class="logo">𓂀MGK𒆜</div>
+  <div class="subtext">𒈠𓏏𒀸𒁺𒉌𓇌𓂀𒐕𓁹𓎛𒂍𓄿𒈠</div>
+  <div class="subtext" style="margin-top: 12px; font-size: 48px; color: #ff3399; text-shadow: 0 0 12px #f0f, 0 0 18px #f0f;">𓃠</div><!-- رمز القرد -->
+<div class="subtext" style="margin-top: 12px; font-size: 160px; color: #ff3399; text-shadow: 0 0 10px #f0f;">𓃠</div>
+
+<!-- الرسالة السرية -->
+<div id="secretMessage" class="secret-message"></div>
+
+<style>
+  .secret-message {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 28px;
+    color: #39ff14;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+    white-space: pre-line;
+    min-height: 120px;
+  }
+
+  .secret-char {
+    opacity: 0;
+    display: inline-block;
+    transform: scale(0.8);
+    animation: growIn 0.4s forwards;
+  }
+
+  @keyframes growIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  const message = "[Incoming Transmission]\nHello.\nWell done for making it here.\nWe will be in touch with you soon.\n— M";
+  const container = document.getElementById("secretMessage");
+
+  setTimeout(() => {
+    message.split("").forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.classList.add("secret-char");
+      span.style.animationDelay = `${i * 0.05}s`;
+      container.appendChild(span);
+    });
+  }, 5000);
+</script>
+</div><div class="logo-container">
+  <div class="logo">𓂀MGK𒆜</div>
+  <div class="subtext">𒈠𓏏𒀸𒁺𒉌𓇌𓂀𒐕𓁹𓎛𒂍𓄿𒈠</div>
+  <div class="subtext" style="margin-top: 20px; font-size: 120px; color: #ff3399; text-shadow: 0 0 20px #f0f, 0 0 40px #f0f; font-family: 'Segoe UI Emoji', 'Noto Sans Egyptian Hieroglyphs', sans-serif;">
+    𓃠
+  </div>
+</div><style>
+  .space-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 180px;
+    background: linear-gradient(145deg, #0a0015, #300050);
+    clip-path: polygon(
+      50% 0%,
+      93% 25%,
+      93% 75%,
+      50% 100%,
+      7% 75%,
+      7% 25%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    color: #00ffff;
+    text-shadow: 0 0 15px #0ff, 0 0 35px #0ff;
+    box-shadow: 0 0 30px #0ff, 0 0 90px #0ff inset;
+    cursor: pointer;
+    font-family: 'Segoe UI Emoji', 'Noto Sans Egyptian Hieroglyphs', sans-serif;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .space-button:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 50px #00ffff, 0 0 120px #00ffff inset;
+  }
+</style>
+
+<div class="space-button">𓁹</div><style>
+  .logo-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .logo {
+    font-size: 150px;
+    color: #00ffff;
+    text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  }
+
+  .subtext {
+    font-size: 84px;
+    color: #ff3399;
+    text-shadow: 0 0 15px #f0f, 0 0 30px #f0f;
+    margin-top: 20px;
+  }
+
+  .monkey-symbol {
+    font-size: 100px;
+    margin-top: 30px;
+    color: #ff3399;
+    text-shadow: 0 0 15px #f0f, 0 0 30px #f0f;
+  }
+</style>
+
+<div class="logo-container">
+  <div class="logo">𓂀MGK𒆜</div>
+  <div class="subtext">𒈠𓏏𒀸𒁺𒉌𓇌𓂀𒐕𓁹𓎛𒂍𓄿𒈠</div>
+  <div class="monkey-symbol">𓃠</div>
+</div><style>
+  .secret-message {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 28px;
+    color: #39ff14;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+    white-space: pre-line;
+    min-height: 120px;
+  }
+
+  .secret-char {
+    opacity: 0;
+    display: inline-block;
+    transform: scale(0.8);
+    animation: growIn 0.4s forwards;
+  }
+
+  @keyframes growIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<div id="secretMessage" class="secret-message"></div>
+
+<script>
+  const message = "[Incoming Transmission]\nHello.\nWell done for making it here.\nWe will be in touch with you soon.\n— M";
+  const container = document.getElementById("secretMessage");
+
+  setTimeout(() => {
+    message.split("").forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.classList.add("secret-char");
+      span.style.animationDelay = `${i * 0.05}s`;
+      container.appendChild(span);
+    });
+  }, 5000);
+</script><script>
+  setTimeout(() => {
+    document.body.innerHTML = ''; // يمسح كل المحتوى من الصفحة
+    document.body.style.backgroundColor = 'black'; // يحول الخلفية للسواد الكامل
+  }, 15000); // 15000 ميلي ثانية = 15 ثانية
+</script><!-- الرسالة السرية -->
+<div id="secretMessage" class="secret-message"></div>
+
+<!-- رسالة الخطأ 404 -->
+<div class="error-message">404 - Try Again</div>
+
+<style>
+  .secret-message {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 28px;
+    color: #39ff14;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+    white-space: pre-line;
+    min-height: 120px;
+  }
+
+  .secret-char {
+    opacity: 0;
+    display: inline-block;
+    transform: scale(0.8);
+    animation: growIn 0.4s forwards;
+  }
+
+  @keyframes growIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #ff3366;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+    animation: blink 1.5s infinite alternate;
+  }
+
+  @keyframes blink {
+    0%   { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+</style>
